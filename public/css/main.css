@@ -138,8 +138,8 @@ ul {
     margin-left: 24px;
   }
   .header .navbar {
-    width: 10%;
-    height: 10%;
+    width: 100%;
+    height: 100%;
     align-items: flex-end;
     flex-direction: column;
     justify-content: flex-start;
@@ -147,6 +147,7 @@ ul {
   }
   .header .navbar .toggle {
     margin-right: 24px;
+    transition: all 0.5s ease-in-out;
     width: 30px;
     height: 80px;
   }
@@ -216,7 +217,7 @@ ul {
   }
   .header .navbar .active.toggle span {
     transition: all 0.5s;
-    top: 50%;
+    top: 40px;
     transform: rotate(45deg);
   }
   .header .navbar .active.toggle:before {
@@ -224,7 +225,7 @@ ul {
   }
   .header .navbar .active.toggle:after {
     transition: all 0.5s;
-    top: 50%;
+    top: 40px;
     transform: rotate(-45deg);
   }
 }
@@ -241,7 +242,7 @@ ul {
   }
   .header .navbar {
     width: 100%;
-    height: 10%;
+    height: 100%;
   }
   .header .navbar .nav {
     background-color: #53db9b;
@@ -271,7 +272,7 @@ ul {
   }
   .header .navbar .active.toggle span {
     transition: all 0.5s;
-    top: 50%;
+    top: 40px;
     transform: rotate(45deg);
   }
   .header .navbar .active.toggle:before {
@@ -279,7 +280,7 @@ ul {
   }
   .header .navbar .active.toggle:after {
     transition: all 0.5s;
-    top: 50%;
+    top: 40px;
     transform: rotate(-45deg);
   }
 }

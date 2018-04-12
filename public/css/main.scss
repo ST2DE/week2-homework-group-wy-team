@@ -185,14 +185,15 @@ ul {
             margin-left: 24px;
         }
         .navbar {
-            @include size(10%,
-            10%); // pointer-events: none;
+            @include size(100%,
+            100%); // pointer-events: none;
             align-items: flex-end;
             flex-direction: column;
             justify-content: flex-start;
             transition: all 0.5s ease-in-out;
             .toggle {
                 margin-right: 24px;
+                transition: all 0.5s ease-in-out;
                 @include size(30px,
                 80px);
                 span {
@@ -258,7 +259,7 @@ ul {
             .active.toggle {
                 span {
                     transition: all 0.5s;
-                    top: 50%;
+                    top: 40px;
                     transform: rotate(45deg);
                 }
                 &:before {
@@ -266,7 +267,7 @@ ul {
                 }
                 &:after {
                     transition: all 0.5s;
-                    top: 50%;
+                    top: 40px;
                     transform: rotate(-45deg);
                 }
             }
@@ -285,7 +286,7 @@ ul {
         }
         .navbar {
             @include size(100%,
-            10%);
+            100%);
             .nav {
                 background-color: #53db9b;
                 position: fixed;
@@ -311,7 +312,7 @@ ul {
             .active.toggle {
                 span {
                     transition: all 0.5s;
-                    top: 50%;
+                    top: 40px;
                     transform: rotate(45deg);
                 }
                 &:before {
@@ -319,7 +320,7 @@ ul {
                 }
                 &:after {
                     transition: all 0.5s;
-                    top: 50%;
+                    top: 40px;
                     transform: rotate(-45deg);
                 }
             }
