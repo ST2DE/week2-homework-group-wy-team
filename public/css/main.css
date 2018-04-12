@@ -83,7 +83,7 @@ ul {
   margin: 12px;
   width: 48px;
   height: 48px;
-  background: url(/public/img/st2de.svg);
+  background: url(public/img/st2de.svg);
   background-position: center;
   background-size: cover;
 }
