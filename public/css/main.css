@@ -92,9 +92,6 @@ ul {
   margin: 12px;
   width: 48px;
   height: 48px;
-  background: url('public/img/st2de.svg');
-  background-size: cover;
-  background-position: center;
 }
 
 .header .logo:hover {
