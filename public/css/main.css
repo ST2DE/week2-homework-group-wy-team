@@ -75,9 +75,21 @@ ul {
 }
 
 .header .logo {
-  width: 80px;
-  height: 80px;
-  border: 1px solid #000;
+  top: 4px;
+  transition: 0.5s;
+}
+
+.header .logo .logo__item {
+  margin: 12px;
+  width: 48px;
+  height: 48px;
+  background: url(/public/img/st2de.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+.header .logo:hover {
+  transform: scale(1.2);
 }
 
 .header .navbar {
@@ -293,7 +305,7 @@ ul {
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  padding: 0px;
+  padding: 12px;
 }
 
 .main .hero h1 {
@@ -479,3 +491,4 @@ ul {
   font-weight: 400;
   color: #f5f5f5;
 }
+/*# sourceMappingURL=main.css.map */

@@ -153,9 +153,19 @@ ul {
     z-index: 101;
     @include flexAuto();
     .logo {
-        @include size(80px,
-        80px);
-        border: 1px solid #000;
+        top: 4px;
+        transition: 0.5s;
+        .logo__item {
+            margin: 12px;
+            @include size(48px,
+            48px);
+            background: url(/public/img/st2de.svg);
+            background-position: center;
+            background-size: cover;
+        }
+        &:hover {
+            transform: scale(1.2);
+        }
     }
     @include nav();
 }
@@ -338,7 +348,7 @@ ul {
         display: flex;
         flex-flow: column;
         justify-content: flex-end;
-        padding: 0px; // border: #000 1px solid;
+        padding: 12px;
         h1 {
             letter-spacing: 1px;
             line-height: 70px;
