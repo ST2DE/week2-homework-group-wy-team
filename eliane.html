@@ -186,7 +186,161 @@
 					<li><h5>1 修改完但還沒提交的檔案為Modified</h5></li>
 					<li><h5>2 藉由git add .指令進入Staging Area暫存起來 (暫存區</h5></li>
 					<li><h5>3 藉由git commit指令確定將這個檔案版本存入Repository (版本庫,成功儲存</h5></li>
-				
+					<li><h5>
+						常用命令列指令:
+						</h5></li>
+				<table>
+					<thead>
+						<tr>
+							<th style="width:200px; display:inline-block; ">指令</th>
+							<th>意義</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>touch</td>
+							<td>建立檔案</td>
+						</tr>
+						<tr>
+							<td>mkdir </td>
+							<td>建立資料夾、目錄</td>
+						</tr>
+						<tr>
+							<td>git add .     </td>
+							<td>新增的檔案加入到 Git 版本控管</td>
+						</tr>
+						<tr>
+							<td>git init</td>
+							<td>在本地資料夾新增數據庫</td>
+						</tr>
+						<tr>
+							<td>git clone</td>
+							<td>	複製下來別人的專案到local端</td>
+						</tr>
+						<tr>
+							<td>git status	</td>
+							<td>查詢當前工作目錄的詳細狀態</td>
+						</tr>
+						<tr>
+							<td>git checkout</td>
+							<td>切換到其他分支</td>
+						</tr>
+						<tr>
+						<td>
+							git checkout -b 
+							</td>
+						<td>
+							 切換並建立其他分支</td></tr>
+						<tr>
+						<td>
+							git branch </td>
+						<td>
+							能建立和刪除分支，如果不加任何參數，它會給出目前所有分支的清單,分支前的'*'字元：它表示目前所在的分支。也就是說，如果現在提交更新，master 分支將隨著開發進度前移。</td>
+						</tr>
+						<tr>
+						<td>
+							git branch -v </td>
+						<td>
+						查看各個分支最後一個提交物件的資訊</td>
+						</tr>
+						<tr>
+						<td>
+							git branch --merged </td>
+						<td>
+							  從該清單中篩選出你已經與目前分支合併的分支</td>
+						</tr>
+						<tr>
+						<td>
+							git branch--no-merged</td>
+						<td> 從該清單中篩選出你尚未與目前分支合併的分支</td>
+						</tr>
+						<tr>
+						<td>
+							git branch -d </td><td>
+							清單中沒有'*'字元的分支可以用此指令來刪掉(若是還未合併進來的分支，由於這些分支中還包含著尚未合併進來的工作成果，所以簡單地用 git branch -d 刪除該分支會提示錯誤，因為那樣做會丟失資料)</td>
+						</tr>
+						<tr>
+						<td>
+							git branch-D </td>
+						<td>
+							   強制執行刪除選項</td>
+						</tr>
+						<tr>
+						<td>
+							git pull </td>
+						<td>
+							 就是去上線抓東西下來（Fetch），並且更新本機的進度（Merge）</td>
+						</tr>
+						<tr>
+						<td>
+							git pull --rebase </td>
+						<td>在 Fetch 完成之後，便會使用 Rebase 方式進行合併</td>
+						</tr>
+						<tr>
+						<td>
+							git fetch </td>
+						<td>執行 pull，遠端數據庫的內容會自動合併。但是，若是想確認遠端數據庫的內容卻不是真的想合併，在這種情況下，請使用 fetch。</td>
+						</tr>
+						<tr>
+						<td>
+							git help add </td><td>
+							 查詢完整的文件</td>
+						</tr>
+						<tr>
+						<td>
+							git commit -m "版本紀錄的說明文字" </td>
+						<td>
+							將檔案提交入Repository，只能輸入一行</td>
+						</tr>
+						<tr>
+						<td>
+							git commit -e "版本紀錄的說明文字" </td>
+						<td>  將檔案提交入Repository，能撰寫超過一行的評論</td>
+						</tr>
+						<tr>
+						<td>
+							git rm –cached  </td>
+						<td>將不在Repository的檔案移出Staging Area，若是git add .錯檔案了，可以將檔案移出暫存區（但是不適用在已經被加入repository的檔案）</td>
+						</tr>
+						<tr>
+						<td>
+							git reset HEAD  </td>
+						<td>將已經在Repository的檔案移出Staging Area</td>
+						</tr>
+						<tr>
+						<td>
+							git log </td>
+						<td>
+							      查詢版本的歷史紀錄</td>
+						</tr>
+						<tr>
+						<td>
+							git diff </td>
+						<td>比較文件或commit間修改的差異(在git diff後面輸入commit代碼，也可以比較兩次commit間修改的差異)</td>
+						</tr>
+						<tr>
+						<td>
+							git show </td>
+						<td>  詳細列出該次commit的修改內容(把commit代碼複製起來 (複製六碼或以上)後輸入在git show後面，就會顯示該次詳細的修改內容)</td>
+						</tr>
+						<tr>
+						<td>git push origin master </td><td>上傳 master 分支到 origin 伺服器</td>
+						</tr>
+						<tr><td>git log -10</td>
+							<td>   可以透過以下指令限制輸出的版本數量，以一個 ( - ) 與一個數字，可以限定輸出最近幾筆紀錄</td>
+						
+						</tr>
+						
+						<tr><td>git rm '要刪除的檔案名'</td><td>刪除檔案</td></tr>
+						<tr>
+						<td>
+							git mv 檔案名 要改的檔案名 </td><td>變更檔案或目錄的名稱</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+
 				</ol>
 				
 				<br><br>
@@ -200,10 +354,10 @@
 						<a href="https://git-scm.com/book/zh/v2/Git-分支-分支的新建与合并" target="_blank">Git</a>
 					</li>
 					<li>
-						<a href="https://backlog.com/git-tutorial/tw/intro/intro1_1.html" target="_blank">Git</a>
+						<a href="https://backlog.com/git-tutorial/tw/intro/intro1_1.html" target="_blank">連猴子都能懂的git入門指南</a>
 					</li>
 					<li>
-						<a href="https://git-scm.com/book/en/v2" target="_blank">Git官方</a>
+						<a href="https://git-scm.com/book/en/v2" target="_blank">Git官方網站</a>
 					</li>
 				
 				</ol>
