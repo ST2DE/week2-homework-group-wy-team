@@ -70,305 +70,216 @@
 				<h1 id="Git-教學">
 					<a class="anchor hidden-xs" href="#Git-教學" title="Git-教學">
 						<span class="octicon octicon-link"></span>
-					</a>Git 教學 -- Ashu</h1>
-				<ul>
+					</a>Git 教學 -- 佳翔</h1>
+
+					<ul>
 					<li><h3>目錄</h3>
 						<ul>
 							<li>
-								<a class="anchor hidden-xs" href="#Git是什麼？" title="Git是什麼？">
+								<a class="anchor hidden-xs" href="#為什麼要用 GIT ?" title="為什麼要用 GIT ?">
 									<span class="octicon octicon-link"></span>
-								</a>Git是什麼？
+								</a>為什麼要用 GIT ?
 							</li>
 							<li>
-								<a class="anchor hidden-xs" href="#版本控制比較" title="版本控制比較">
+								<a class="anchor hidden-xs" href="#npm init" title="npm init">
 									<span class="octicon octicon-link"></span>
-								</a>版本控制比較</li>
-							<li>基礎建立github專案<a class="anchor hidden-xs" href="#基礎建立github專案" title="基礎建立github專案"><span class="octicon octicon-link"></span></a></li>
-							<li>其他指令<a class="anchor hidden-xs" href="#其他指令" title="其他指令">
+								</a>NPM INIT
+							</li>
+							<li>Git 基本操作<a class="anchor hidden-xs" href="#Git 基本操作" title="Git 基本操作"><span class="octicon octicon-link"></span></a></li>
+
+							<li>Step<a class="anchor hidden-xs" href="#Step" title="Step">
 									<span class="octicon octicon-link"></span>
 								</a></li>
-							<li>Git問題<a class="anchor hidden-xs" href="#Git問題" title="Git問題">
+
+							<li>Merge V.S. Rebase<a class="anchor hidden-xs" href="#Merge V.S. Rebase" title="Merge V.S. Rebase">
 									<span class="octicon octicon-link"></span>
 								</a></li>
-							<li>參考資料<a class="anchor hidden-xs" href="#參考資料：" title="參考資料：">
+							<li>.gitignore<a class="anchor hidden-xs" href="#gitignore" title="gitignore">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+							<li>檔案在git的旅程<a class="anchor hidden-xs" href="#檔案在git的旅程" title="檔案在git的旅程">
 									<span class="octicon octicon-link"></span>
 								</a></li>
 						</ul>
 					</li>
 				</ul>
+
 				<hr>
-				<h3 id="Git是什麼？">
-					<a class="anchor hidden-xs" href="#Git是什麼？" title="Git是什麼？">
+				<h3 id="為什麼要用 GIT ?">
+					<a class="anchor hidden-xs" href="#為什麼要用 GIT ?" title="Git是什麼？">
 						<span class="octicon octicon-link"></span>
-					</a>Git是什麼？</h3>
-				<p>git是一種版本控制系統，同樣為版本控制的還有SVN、FTP
-					<br> 像網路硬碟那樣的感覺，只有最後一位上傳的code會被保留而已，如果傳輸中途斷線了會變成亂碼
-				</p>
-				<ul>
-					<li>什麼是版本控制？
-						<br> 版本控制：主版與支流之間的控管。
-						<br> 版本控制是一種軟體工程技巧，藉此能在軟體開發的過程中，確保由不同人所編輯的同一程式檔案都得到同步。
-					</li>
-				</ul>
-				<p>透過這樣的版本控制系統，可以清楚的記錄每個檔案是誰在什麼時候加進來、什麼時候被修改或刪除。</p>
-				<ul>
-					<li>
-						<p>好的版本控制系統有許多好處：</p>
-						<ul>
-							<li>
-								<p>頻繁的遞交可以幫助團隊開發進度的透明化。</p>
-							</li>
-							<li>
-								<p>定義且公布最新更新的程式碼，除非程式碼被提交上去，否則不會被整合。</p>
-							</li>
-							<li>
-								<p>維護專案的工作歷史記錄，將每一個特定版本內的具體內容建檔並編碼，甚至能列出差異。</p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<h3 id="版本控制比較">
-					<a class="anchor hidden-xs" href="#版本控制比較" title="版本控制比較">
+					</a>為什麼要用 GIT ?</h3>
+				<ol>
+					<li><h5>更流暢的工作流程:就算無法連接伺服器，還是能夠依目前的進度先 commit，並且繼續做後續的修改，就不用在那裡空等，也不用擔心等到網路可連線</h5></li>
+					<li><h5>快速 : &nbsp; Git 之所以反應迅速，主要是因為分散式架構的緣故。在此架構下，版本庫的完整歷史全都在本機上。</h5></li>
+					<li><h5>版本庫毀損的風險較低</h5></li>
+					<li><h5>彈性的本地分支</h5></li>
+				</ol>
+				
+				<br><br>
+				
+				<h3 id="npm init">
+					<a class="anchor hidden-xs" href="#npm init" title="npm init">
 						<span class="octicon octicon-link"></span>
-					</a>版本控制比較</h3>
+					</a>在創一個專案時通常會使用 npm init</h3>
+				
 				<table>
 					<thead>
 						<tr>
-							<th></th>
-							<th>FTP</th>
-							<th>SVN</th>
-							<th>Git</th>
+							<th style="width:200px; display:inline-block; ">在打入 npm init 之後</th>
+							<th>會被要求填入以下欄位</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>版本控制</td>
-							<td>各自的主機</td>
-							<td>集中式</td>
-							<td>分散式</td>
+							<td>package name</td>
+							<td>你這個project 要叫什麼名字</td>
 						</tr>
 						<tr>
-							<td>網路需求</td>
-							<td>需連網運作</td>
-							<td>需連網運作</td>
-							<td>可線下執行</td>
+							<td>version</td>
+							<td>你決定這個 Project 現在應該是第幾版</td>
 						</tr>
 						<tr>
-							<td>檔案庫</td>
-							<td>需自行管理及命名</td>
-							<td>中央版本庫及分支</td>
-							<td>使用者皆有獨立版本庫及分支</td>
+							<td>description	Project </td>
+							<td>基本介紹</td>
 						</tr>
 						<tr>
-							<td>同步提交</td>
-							<td>只有最後那個人有提供上去</td>
-							<td>可同步提交上去</td>
-							<td>可同步提交上去</td>
+							<td>entry point</td>
+							<td>進入點，如果要跑你的 Project 應該要執行哪個檔案</td>
 						</tr>
+						<tr>
+							<td>author</td>
+							<td>	作者(自己)</td>
+						</tr>
+						<tr>
+							<td>license	</td>
+							<td>你這個 Project 是採用什麼授權的</td>
+						</tr>
+						<tr>
+							<td>test command</td>
+							<td>這個不太重要XD</td>
+						</tr>
+
 					</tbody>
 				</table>
+
+				<h4>基本上結束後，你可以看到這個資料夾底下，新增了一個 Package.json</h4>
+				<p>(也是可以用 npm init -y 她會把預設選項全部空白)</p>
+
+			
 				<blockquote>
-					<p>集中式版本控制系統 VS 分散式版本控制系統</p>
+					<p>接著一般就會安裝自己會用到的package: </p>
+					<p>ex. npm install requests : node_module 這個資料夾就會產生 requests 所需的檔案 ， 同時再 package.json 裡面添加關於 requests 的版本</p>
 				</blockquote>
-				<ul>
-					<li>
-						<p>集中式版本控制系統</p>
-						<ul>
-							<li>資料都在中央伺服器，需先連到中央伺服器取得檔案，然後完成修改後再重新上傳上去</li>
-							<li>要連網路才能工作</li>
-							<li>中央伺服器發生問題，那就無法工作了</li>
-						</ul>
-					</li>
-					<li>
-						<p>分散式版本控制系統</p>
-						<ul>
-							<li>開發者都能擁有獨立的檔案庫</li>
-							<li>不必連網就能運作，在完成檔案時一併向上提交即可</li>
-						</ul>
-					</li>
-				</ul><h3 id="基礎建立github專案"><a class="anchor hidden-xs" href="#基礎建立github專案" title="基礎建立github專案"><span class="octicon octicon-link"></span></a>基礎建立github專案</h3><p>如果在github上有專案的話可以先clone回來，這樣就可以直接remote了</p><pre><code>mkdir 資料夾名稱
-cd my_project
-git clone 你的專案</code></pre>
-				<p>好了之後</p>
-				<pre><code>git status //看狀態</code></pre>
-				<p>Untracked files的話是全新的檔案，尚未被提交過</p>
-				<pre><code>git add 你的檔案
-git add . //將所有有更動的檔案提交
-						</code></pre>
-				<p>這邊記住一點！！！！！！
-					<br> Git 在計算、產生物件的時候，是根據「檔案的內容」去做計算的，所以光是新增一個目錄，Git 是沒辦法處理它的。
-					<br>
-					<strong>空的目錄無法被提交！</strong>
-				</p>
-				<p>所以請讓你的目錄裡面有東西</p>
-				<p>提交完之後再用git status看一次，你的狀態會變成Changes to be committed</p>
-				<p>好了之後</p>
-				<pre><code>git commit -m "直接輸入訊息但不要打中文"
-git push</code></pre>
-				<p>就完成了</p>
-				<h4 id="補充說明檔案狀態">
-					<a class="anchor hidden-xs" href="#補充說明檔案狀態" title="補充說明檔案狀態">
-						<span class="octicon octicon-link"></span>
-					</a>補充說明:檔案狀態</h4>
-				<ul>
-					<li>Untracked：檔案尚未被追蹤時的初始狀態</li>
-					<li>Unmodified：將untracked的檔案加入追蹤，以及staged狀態的檔案commit後</li>
-					<li>Modified：檔案只要有修改就會到這個狀態</li>
-					<li>Staged：git add後放在暫存區</li>
-					<li>Commited：git commit後放在儲存區</li>
+				
+				<br><br>
+				<h3 id="Git 基本操作"><a class="anchor hidden-xs" href="#Git 基本操作" title="Git 基本操作">
+					<span class="octicon octicon-link"></span></a>基礎建立github專案</h3>
+					<p>(git 新手教學 <a href="https://hellolynn.hpd.io/2017/01/18/git%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8-part-1/">https://hellolynn.hpd.io/2017/01/18/git新手入門教學-part-1/)</a></p>
+
+				<ul style="list-style-type: disc;">
+				<li>在當前目錄下添加檔案</li>
+				<pre><code>$ touch hello.txt </code></pre>
 				</ul>
-				<h2 id="其他指令">
-					<a class="anchor hidden-xs" href="#其他指令" title="其他指令">
-						<span class="octicon octicon-link"></span>
-					</a>其他指令</h2>
-				<h2 id="git-init">
-					<a class="anchor hidden-xs" href="#git-init" title="git-init">
-						<span class="octicon octicon-link"></span>
-					</a>git init</h2>
-				<pre><code>git init
-						</code></pre>
-				<p>初始化資料夾，做完此步驟後，資料夾會多一個隱藏資料夾叫做.git (可以輸入ls -a查看)</p>
-				<h3 id="gitigore-忽略檔案">
-					<a class="anchor hidden-xs" href="#gitigore-忽略檔案" title="gitigore-忽略檔案">
-						<span class="octicon octicon-link"></span>
-					</a>.gitigore 忽略檔案</h3>
-				<p>.gitignore 作用範圍包含整個資料夾以及其所有子資料夾</p>
-				<p>.gitignore 也可以存在多個資料夾中</p>
-				<p>每個資料夾都可以另外定義 .gitignore 的內容</p>
-				<h2 id="git-log-紀錄檔git-diff-比較">
-					<a class="anchor hidden-xs" href="#git-log-紀錄檔git-diff-比較" title="git-log-紀錄檔git-diff-比較">
-						<span class="octicon octicon-link"></span>
-					</a>git log 紀錄檔/git diff 比較</h2>
-				<pre><code>git log//按q可跳出瀏覽
-git log —graph//圖形化
-git diff</code></pre>
-				<p>git diff是比對檔案與版本差異</p>
-				<p>先從git log中得到id資訊(一長串數字的前五碼如e17f3)</p>
-				<p>例如下圖</p>
-				<p>
-					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff1.png?raw=true" alt="">
-				</p>
-				<p>再將id資訊填入作比對</p>
-				<p>如git diff 5293b 91d30 會呈現下圖資訊(紅色為刪除，綠色為增加)</p>
-				<p>
-					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff2.png?raw=true" alt="">
-				</p>
-				<h2 id="git-rm">
-					<a class="anchor hidden-xs" href="#git-rm" title="git-rm">
-						<span class="octicon octicon-link"></span>
-					</a>git rm</h2>
-				<pre><code>git rm</code></pre>
-				<p>將檔案刪除</p>
-				<h2 id="git-mv">
-					<a class="anchor hidden-xs" href="#git-mv" title="git-mv">
-						<span class="octicon octicon-link"></span>
-					</a>git mv</h2><pre><code>git mv 檔案名 資料夾</code></pre>
-				<p>搬移檔案，這樣就不用add或rm檔案了</p>
-				<h2 id="git-pull">
-					<a class="anchor hidden-xs" href="#git-pull" title="git-pull">
-						<span class="octicon octicon-link"></span>
-					</a>git pull</h2>
-					<pre><code>git pull</code></pre>
-				<p>同步遠端的檔案</p>
-				<h2 id="git-rebase與git-merge差異">
-					<a class="anchor hidden-xs" href="#git-rebase與git-merge差異" title="git-rebase與git-merge差異">
-						<span class="octicon octicon-link"></span>
-					</a>git rebase與git merge差異</h2>
-				<p>他們作的事情一樣，都是合併，只是合併的過程不一樣</p>
-				<pre><code>git rebase
-git merge</code></pre>
-				<p>
-					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff3.png?raw=true" alt="">
-				</p>
-				<p>merge：兩分支會在master中有一個新的節點，現有的分支不會作改變</p>
-				<p>
-					<img src="https://wac-cdn.atlassian.com/dam/jcr:e229fef6-2c2f-4a4f-b270-e1e1baa94055/02.svg?cdnVersion=ka" alt="">
-				</p>
-				<p>rebase:直接在master上接上你的分支</p>
-				<p>
-					<img src="https://wac-cdn.atlassian.com/dam/jcr:5b153a22-38be-40d0-aec8-5f2fffc771e5/03.svg?cdnVersion=ka" alt="">
-				</p>
-				<h2 id="git-branch">
-					<a class="anchor hidden-xs" href="#git-branch" title="git-branch">
-						<span class="octicon octicon-link"></span>
-					</a>git branch</h2>
-				<pre><code>git branch [new branch’s name]
--r  act on remote-tracking branches
--a  list both remote-tracking and local branches
--d  delete fully merged branch
--D  delete branch (even if not merged)</code></pre>
-				<p>新增分支</p>
-				<h2 id="git-checkout">
-					<a class="anchor hidden-xs" href="#git-checkout" title="git-checkout">
-						<span class="octicon octicon-link"></span>
-					</a>git checkout</h2>
-				<pre><code>git checkout</code></pre>
-				<p>切換分支</p>
-				<h2 id="git-stash">
-					<a class="anchor hidden-xs" href="#git-stash" title="git-stash">
-						<span class="octicon octicon-link"></span>
-					</a>git stash</h2>
-				<pre><code>git stash [apply不會刪之前的進度/pop會刪除以往的進度/list]</code></pre>
-				<p>暫存你目前的工作，apply/pop是取出你的暫存，如下圖</p>
-				<p>
-					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git-stash1.png?raw=true" alt="">
-					<br>
-					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git-stash2.png?raw=true" alt="">
-				</p>
-				<h2 id="git-config">
-					<a class="anchor hidden-xs" href="#git-config" title="git-config">
-						<span class="octicon octicon-link"></span>
-					</a>git config</h2>
-				<pre><code>git config --global
-git config --global  user.name "zlargon"
-git config --global  user.email "zlargon@icloud.com"</code></pre>
-				<p>設定初始參數</p>
-				<pre><code>git config --list</code></pre>
-				<p>可查看設定的參數</p>
-				<h2 id="Git問題">
-					<a class="anchor hidden-xs" href="#Git問題" title="Git問題">
-						<span class="octicon octicon-link"></span>
-					</a>Git問題</h2>
+
+				<br><br>
+				<h3 id="Step"><a class="anchor hidden-xs" href="#Step" title="Step">
+					<span class="octicon octicon-link"></span></a>Step:</h3>
 				<ol>
-					<li>Updates were rejected because a pushed branch tip is behind its remote</li>
+					<li>確認是否有安裝 git</li>
+					<pre><code>$ git --version </code></pre>
+
+					<li>git config: (第一次使用時)</li>
+					<pre><code>$ git config --global user.name "alex"
+$ git config --global user.email "alex@gmail.com"
+$ git config --list   查看 git 設定內容</code></pre>
+
+
+					<li><br/>
+						<ul style="list-style-type: disc;">
+							<li>clone 別人的專案到 local 端</li>
+							<pre><code>$ git clone</code></pre>
+							<h3> OR</h3>
+							<li>創建一個新的Repository (打開任何一個專案資料夾打上git init 會產生一個隱藏的.git資料夾)</li>
+							<pre><code>$ git init</code></pre>
+						</ul>
+					</li>
+
+					<li>把所有更改過的東西都 add 到 Staging area</li>
+					<pre><code>$ git add 主檔名.副檔名</code></pre>
+
+					<li>將檔案提交入Repository</li>
+					<pre><code>$  git commit -m  '一行解說文字'  </code></pre>
+
+					<li>將已經在Repository的檔案移出Staging Area</li>
+					<pre><code>$  git reset HEAD  </code></pre>
+
+					<li>查看目前檔案的狀態</li>
+					<pre><code>$ git status</code></pre>
+
+					<li>查看目前所有commit的歷史紀錄</li>
+					<pre><code>$ git diff </code></pre>
+					
+					<li>比較文件或commit間修改的差異</li>
+					<pre><code>$ git log </code></pre>
+
+					<li>詳細列出該次commit的修改內容</li>
+					<pre><code>$ git show </code></pre>
+
+					<li style="list-style-type: none">暫存用</li>
+					<pre><code>$ git stash [apply/pop/list] </code></pre>
 				</ol>
-				<p>github上的版本跟自己本機的版本不同時</p>
-				<pre><code>git push -u origin master -f </code></pre>
-				<p>強制更新成你電腦上的分支</p>
-				<ol start="2">
-					<li>rebase in progress;
-						<br> 代碼發生衝突時
-					</li>
-				</ol>
-				<pre><code>git status
-git add
-git rebase --continue</code></pre>
-				<h2 id="參考資料：">
-					<a class="anchor hidden-xs" href="#參考資料：" title="參考資料：">
-						<span class="octicon octicon-link"></span>
-					</a>參考資料：</h2>
-				<ol>
-					<li>
-						<a href="https://zlargon.gitbooks.io/git-tutorial/content/" target="_blank">Git</a>
-					</li>
-					<li>
-						<a href="https://gitbook.tw/" target="_blank">為你自己學 Git</a>
-					</li>
-					<li>
-						<a href="https://git-scm.com/book/en/v2" target="_blank">Git官方</a>
-					</li>
-					<li>
-						<a href="https://ithelp.ithome.com.tw/users/20004901/ironman/525" target="_blank">30天精通Git版本控管</a>
-					</li>
-					<li>
-						<a href="https://github.com/geeeeeeeeek/git-recipes/wiki/5.1-%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%EF%BC%9AMerge%E3%80%81Rebase-%E7%9A%84%E9%80%89%E6%8B%A9"
-						    target="_blank">合併介紹</a>
-					</li>
-					<li>
-						<a href="http://wiki.csie.ncku.edu.tw/git" target="_blank">成大資工wiki</a>
-					</li>
-				</ol>
-			</div>
+
+				<br><br>
+				<h3 id="Merge V.S. Rebase"><a class="anchor hidden-xs" href="#Merge V.S. Rebase" title="Merge V.S. Rebase">
+					<span class="octicon octicon-link"></span></a>Merge V.S. Rebase</h3>
+
+				<table>
+					<thead>
+						<tr>
+						<td>Merge(初期比較常用)</td>
+						<td>Rebase</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>建立起一條分支線圖</td>
+							<td>將自己所有的變更 commit 在 master 最新版的後面</td>
+						</tr>
+					</tbody>
+
+				</table>
+				<img src="https://camo.githubusercontent.com/460030e876dff487c44cbac0f032721d6924f6e4/68747470733a2f2f692e696d6775722e636f6d2f787a655a4159532e706e67" alt="" data-canonical-src="https://i.imgur.com/xzeZAYS.png" style="max-width:100%;">
+
+				<br><br>
+				<h3 id="gitignore"><a class="anchor hidden-xs" href="#gitignore" title="gitignore">
+					<span class="octicon octicon-link"></span></a>.gitignore</h3>
+				<blockquote>用法可參照 <a href="https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html">https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html</a></blockquote>
+				
+				<br><br>
+				<h3 id="檔案在git的旅程"><a class="anchor hidden-xs" href="#檔案在git的旅程" title="檔案在git的旅程">
+					<span class="octicon octicon-link"></span></a>檔案在git的旅程</h3>		
+			
+				<img src="https://camo.githubusercontent.com/a569f5c7b10ac604886476a5521bf9a75b257854/687474703a2f2f77696b692e637369652e6e636b752e6564752e74772f6769745f66696c655f7374617475732e504e47" alt="" data-canonical-src="http://wiki.csie.ncku.edu.tw/git_file_status.PNG" style="max-width:100%;">
+				<br><br>
+				<blockquote>
+					<ul style="list-style-type: disc">
+						<li>untracked：檔案一開始都在這個狀態。</li>
+						<li>unmodified：經由指令將untracked的檔案加入追蹤，或是，staged狀態的檔案經由commit，會到這個狀態。另外在這狀態的檔案可以藉由指令來取消追蹤。</li>
+						<li>modified：檔案只要有改變就會到這個狀態，無論是在unmodified或是staged狀態。藉由指令可以放棄這些變更，回到之前的狀態。</li>
+						<li>staged：在這個狀態的檔案，通常就是要準備要提交到新的版本中了。在此狀態的檔案一經過更改就會回到modified狀態。</li>
+					</ul>
+				</blockquote>
+
+					<hr>
+				<h3>參考資料</h3>
+				<ul style="list-style-type: circle;">
+					<li>SlideShare</li>
+					<li>成大資工Wiki</li>
+					<li>git 新手教學</li>
+					<li>etc...</li>
+				</ul>
+				
 
 		</section>
 		<footer>
