@@ -62,7 +62,319 @@
     </div>
     <script src="public/js/main.js"></script>
 
+<section class="main container-fluid">
+			<div id="doc" class="markdown-body container-fluid" style="position: relative;">
+				<h1 id="Git-教學">
+					<a class="anchor hidden-xs" href="#Git-教學" title="Git-教學">
+						<span class="octicon octicon-link"></span>
+					</a>Git 教學 -- Ashu</h1>
+				<ul>
+					<li><h3>目錄</h3>
+						<ul>
+							<li>
+								<a class="anchor hidden-xs" href="#Git是什麼？" title="Git是什麼？">
+									<span class="octicon octicon-link"></span>
+								</a>Git是什麼？
+							</li>
+							<li>
+								<a class="anchor hidden-xs" href="#版本控制比較" title="版本控制比較">
+									<span class="octicon octicon-link"></span>
+								</a>版本控制比較</li>
+							<li>基礎建立github專案<a class="anchor hidden-xs" href="#基礎建立github專案" title="基礎建立github專案"><span class="octicon octicon-link"></span></a></li>
+							<li>其他指令<a class="anchor hidden-xs" href="#其他指令" title="其他指令">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+							<li>Git問題<a class="anchor hidden-xs" href="#Git問題" title="Git問題">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+							<li>參考資料<a class="anchor hidden-xs" href="#參考資料：" title="參考資料：">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+				<h3 id="Git是什麼？">
+					<a class="anchor hidden-xs" href="#Git是什麼？" title="Git是什麼？">
+						<span class="octicon octicon-link"></span>
+					</a>Git是什麼？</h3>
+				<p>git是一種版本控制系統，同樣為版本控制的還有SVN、FTP
+					<br> 像網路硬碟那樣的感覺，只有最後一位上傳的code會被保留而已，如果傳輸中途斷線了會變成亂碼
+				</p>
+				<ul>
+					<li>什麼是版本控制？
+						<br> 版本控制：主版與支流之間的控管。
+						<br> 版本控制是一種軟體工程技巧，藉此能在軟體開發的過程中，確保由不同人所編輯的同一程式檔案都得到同步。
+					</li>
+				</ul>
+				<p>透過這樣的版本控制系統，可以清楚的記錄每個檔案是誰在什麼時候加進來、什麼時候被修改或刪除。</p>
+				<ul>
+					<li>
+						<p>好的版本控制系統有許多好處：</p>
+						<ul>
+							<li>
+								<p>頻繁的遞交可以幫助團隊開發進度的透明化。</p>
+							</li>
+							<li>
+								<p>定義且公布最新更新的程式碼，除非程式碼被提交上去，否則不會被整合。</p>
+							</li>
+							<li>
+								<p>維護專案的工作歷史記錄，將每一個特定版本內的具體內容建檔並編碼，甚至能列出差異。</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<h3 id="版本控制比較">
+					<a class="anchor hidden-xs" href="#版本控制比較" title="版本控制比較">
+						<span class="octicon octicon-link"></span>
+					</a>版本控制比較</h3>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>FTP</th>
+							<th>SVN</th>
+							<th>Git</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>版本控制</td>
+							<td>各自的主機</td>
+							<td>集中式</td>
+							<td>分散式</td>
+						</tr>
+						<tr>
+							<td>網路需求</td>
+							<td>需連網運作</td>
+							<td>需連網運作</td>
+							<td>可線下執行</td>
+						</tr>
+						<tr>
+							<td>檔案庫</td>
+							<td>需自行管理及命名</td>
+							<td>中央版本庫及分支</td>
+							<td>使用者皆有獨立版本庫及分支</td>
+						</tr>
+						<tr>
+							<td>同步提交</td>
+							<td>只有最後那個人有提供上去</td>
+							<td>可同步提交上去</td>
+							<td>可同步提交上去</td>
+						</tr>
+					</tbody>
+				</table>
+				<blockquote>
+					<p>集中式版本控制系統 VS 分散式版本控制系統</p>
+				</blockquote>
+				<ul>
+					<li>
+						<p>集中式版本控制系統</p>
+						<ul>
+							<li>資料都在中央伺服器，需先連到中央伺服器取得檔案，然後完成修改後再重新上傳上去</li>
+							<li>要連網路才能工作</li>
+							<li>中央伺服器發生問題，那就無法工作了</li>
+						</ul>
+					</li>
+					<li>
+						<p>分散式版本控制系統</p>
+						<ul>
+							<li>開發者都能擁有獨立的檔案庫</li>
+							<li>不必連網就能運作，在完成檔案時一併向上提交即可</li>
+						</ul>
+					</li>
+				</ul><h3 id="基礎建立github專案"><a class="anchor hidden-xs" href="#基礎建立github專案" title="基礎建立github專案"><span class="octicon octicon-link"></span></a>基礎建立github專案</h3><p>如果在github上有專案的話可以先clone回來，這樣就可以直接remote了</p><pre><code>mkdir 資料夾名稱
+cd my_project
+git clone 你的專案</code></pre>
+				<p>好了之後</p>
+				<pre><code>git status //看狀態</code></pre>
+				<p>Untracked files的話是全新的檔案，尚未被提交過</p>
+				<pre><code>git add 你的檔案
+git add . //將所有有更動的檔案提交
+						</code></pre>
+				<p>這邊記住一點！！！！！！
+					<br> Git 在計算、產生物件的時候，是根據「檔案的內容」去做計算的，所以光是新增一個目錄，Git 是沒辦法處理它的。
+					<br>
+					<strong>空的目錄無法被提交！</strong>
+				</p>
+				<p>所以請讓你的目錄裡面有東西</p>
+				<p>提交完之後再用git status看一次，你的狀態會變成Changes to be committed</p>
+				<p>好了之後</p>
+				<pre><code>git commit -m "直接輸入訊息但不要打中文"
+git push</code></pre>
+				<p>就完成了</p>
+				<h4 id="補充說明檔案狀態">
+					<a class="anchor hidden-xs" href="#補充說明檔案狀態" title="補充說明檔案狀態">
+						<span class="octicon octicon-link"></span>
+					</a>補充說明:檔案狀態</h4>
+				<ul>
+					<li>Untracked：檔案尚未被追蹤時的初始狀態</li>
+					<li>Unmodified：將untracked的檔案加入追蹤，以及staged狀態的檔案commit後</li>
+					<li>Modified：檔案只要有修改就會到這個狀態</li>
+					<li>Staged：git add後放在暫存區</li>
+					<li>Commited：git commit後放在儲存區</li>
+				</ul>
+				<h2 id="其他指令">
+					<a class="anchor hidden-xs" href="#其他指令" title="其他指令">
+						<span class="octicon octicon-link"></span>
+					</a>其他指令</h2>
+				<h2 id="git-init">
+					<a class="anchor hidden-xs" href="#git-init" title="git-init">
+						<span class="octicon octicon-link"></span>
+					</a>git init</h2>
+				<pre><code>git init
+						</code></pre>
+				<p>初始化資料夾，做完此步驟後，資料夾會多一個隱藏資料夾叫做.git (可以輸入ls -a查看)</p>
+				<h3 id="gitigore-忽略檔案">
+					<a class="anchor hidden-xs" href="#gitigore-忽略檔案" title="gitigore-忽略檔案">
+						<span class="octicon octicon-link"></span>
+					</a>.gitigore 忽略檔案</h3>
+				<p>.gitignore 作用範圍包含整個資料夾以及其所有子資料夾</p>
+				<p>.gitignore 也可以存在多個資料夾中</p>
+				<p>每個資料夾都可以另外定義 .gitignore 的內容</p>
+				<h2 id="git-log-紀錄檔git-diff-比較">
+					<a class="anchor hidden-xs" href="#git-log-紀錄檔git-diff-比較" title="git-log-紀錄檔git-diff-比較">
+						<span class="octicon octicon-link"></span>
+					</a>git log 紀錄檔/git diff 比較</h2>
+				<pre><code>git log//按q可跳出瀏覽
+git log —graph//圖形化
+git diff</code></pre>
+				<p>git diff是比對檔案與版本差異</p>
+				<p>先從git log中得到id資訊(一長串數字的前五碼如e17f3)</p>
+				<p>例如下圖</p>
+				<p>
+					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff1.png?raw=true" alt="">
+				</p>
+				<p>再將id資訊填入作比對</p>
+				<p>如git diff 5293b 91d30 會呈現下圖資訊(紅色為刪除，綠色為增加)</p>
+				<p>
+					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff2.png?raw=true" alt="">
+				</p>
+				<h2 id="git-rm">
+					<a class="anchor hidden-xs" href="#git-rm" title="git-rm">
+						<span class="octicon octicon-link"></span>
+					</a>git rm</h2>
+				<pre><code>git rm</code></pre>
+				<p>將檔案刪除</p>
+				<h2 id="git-mv">
+					<a class="anchor hidden-xs" href="#git-mv" title="git-mv">
+						<span class="octicon octicon-link"></span>
+					</a>git mv</h2><pre><code>git mv 檔案名 資料夾</code></pre>
+				<p>搬移檔案，這樣就不用add或rm檔案了</p>
+				<h2 id="git-pull">
+					<a class="anchor hidden-xs" href="#git-pull" title="git-pull">
+						<span class="octicon octicon-link"></span>
+					</a>git pull</h2>
+					<pre><code>git pull</code></pre>
+				<p>同步遠端的檔案</p>
+				<h2 id="git-rebase與git-merge差異">
+					<a class="anchor hidden-xs" href="#git-rebase與git-merge差異" title="git-rebase與git-merge差異">
+						<span class="octicon octicon-link"></span>
+					</a>git rebase與git merge差異</h2>
+				<p>他們作的事情一樣，都是合併，只是合併的過程不一樣</p>
+				<pre><code>git rebase
+git merge</code></pre>
+				<p>
+					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git%20diff3.png?raw=true" alt="">
+				</p>
+				<p>merge：兩分支會在master中有一個新的節點，現有的分支不會作改變</p>
+				<p>
+					<img src="https://wac-cdn.atlassian.com/dam/jcr:e229fef6-2c2f-4a4f-b270-e1e1baa94055/02.svg?cdnVersion=ka" alt="">
+				</p>
+				<p>rebase:直接在master上接上你的分支</p>
+				<p>
+					<img src="https://wac-cdn.atlassian.com/dam/jcr:5b153a22-38be-40d0-aec8-5f2fffc771e5/03.svg?cdnVersion=ka" alt="">
+				</p>
+				<h2 id="git-branch">
+					<a class="anchor hidden-xs" href="#git-branch" title="git-branch">
+						<span class="octicon octicon-link"></span>
+					</a>git branch</h2>
+				<pre><code>git branch [new branch’s name]
+-r  act on remote-tracking branches
+-a  list both remote-tracking and local branches
+-d  delete fully merged branch
+-D  delete branch (even if not merged)</code></pre>
+				<p>新增分支</p>
+				<h2 id="git-checkout">
+					<a class="anchor hidden-xs" href="#git-checkout" title="git-checkout">
+						<span class="octicon octicon-link"></span>
+					</a>git checkout</h2>
+				<pre><code>git checkout</code></pre>
+				<p>切換分支</p>
+				<h2 id="git-stash">
+					<a class="anchor hidden-xs" href="#git-stash" title="git-stash">
+						<span class="octicon octicon-link"></span>
+					</a>git stash</h2>
+				<pre><code>git stash [apply不會刪之前的進度/pop會刪除以往的進度/list]</code></pre>
+				<p>暫存你目前的工作，apply/pop是取出你的暫存，如下圖</p>
+				<p>
+					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git-stash1.png?raw=true" alt="">
+					<br>
+					<img src="https://github.com/ST2DE/wee1-homework-yf-ashu/blob/master/notebook/img/git-stash2.png?raw=true" alt="">
+				</p>
+				<h2 id="git-config">
+					<a class="anchor hidden-xs" href="#git-config" title="git-config">
+						<span class="octicon octicon-link"></span>
+					</a>git config</h2>
+				<pre><code>git config --global
+git config --global  user.name "zlargon"
+git config --global  user.email "zlargon@icloud.com"</code></pre>
+				<p>設定初始參數</p>
+				<pre><code>git config --list</code></pre>
+				<p>可查看設定的參數</p>
+				<h2 id="Git問題">
+					<a class="anchor hidden-xs" href="#Git問題" title="Git問題">
+						<span class="octicon octicon-link"></span>
+					</a>Git問題</h2>
+				<ol>
+					<li>Updates were rejected because a pushed branch tip is behind its remote</li>
+				</ol>
+				<p>github上的版本跟自己本機的版本不同時</p>
+				<pre><code>git push -u origin master -f </code></pre>
+				<p>強制更新成你電腦上的分支</p>
+				<ol start="2">
+					<li>rebase in progress;
+						<br> 代碼發生衝突時
+					</li>
+				</ol>
+				<pre><code>git status
+git add
+git rebase --continue</code></pre>
+				<h2 id="參考資料：">
+					<a class="anchor hidden-xs" href="#參考資料：" title="參考資料：">
+						<span class="octicon octicon-link"></span>
+					</a>參考資料：</h2>
+				<ol>
+					<li>
+						<a href="https://zlargon.gitbooks.io/git-tutorial/content/" target="_blank">Git</a>
+					</li>
+					<li>
+						<a href="https://gitbook.tw/" target="_blank">為你自己學 Git</a>
+					</li>
+					<li>
+						<a href="https://git-scm.com/book/en/v2" target="_blank">Git官方</a>
+					</li>
+					<li>
+						<a href="https://ithelp.ithome.com.tw/users/20004901/ironman/525" target="_blank">30天精通Git版本控管</a>
+					</li>
+					<li>
+						<a href="https://github.com/geeeeeeeeek/git-recipes/wiki/5.1-%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%EF%BC%9AMerge%E3%80%81Rebase-%E7%9A%84%E9%80%89%E6%8B%A9"
+						    target="_blank">合併介紹</a>
+					</li>
+					<li>
+						<a href="http://wiki.csie.ncku.edu.tw/git" target="_blank">成大資工wiki</a>
+					</li>
+				</ol>
+			</div>
 
+		</section>
+		<footer>
+			<footer class="footer">
+				<div class="bar">Copyright</div>
+			</footer>
+		</footer>
+	</div>
+	<script src="public/js/main.js"></script>
 
 </body>
 
