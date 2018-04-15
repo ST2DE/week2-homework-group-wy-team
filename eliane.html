@@ -11,6 +11,20 @@
         <link rel="icon" type="image/x-icon" href="public/img/st2de.png">
         <link rel="stylesheet" href="public/css/layout.css">
         <link rel="stylesheet" href="public/css/main.css">
+				<link rel="stylesheet" href="public/css/markdown.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+		    crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo="
+		    crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg="
+		    crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg="
+		    crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo="
+		    crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU="
+		    crossorigin="anonymous" />
+		
 
     </head>
 </head>
@@ -51,7 +65,305 @@
                 </ul>
             </nav>
         </header>
-	  
+	  <section class="main container-fluid">
+			<div id="doc" class="markdown-body container-fluid" style="position: relative;">
+				<h1 id="Git-教學">
+					<a class="anchor hidden-xs" href="#Git-教學" title="Git-教學">
+						<span class="octicon octicon-link"></span>
+					</a>Git 教學 -- 美嘉</h1>
+
+					<ul>
+					<li><h3>目錄</h3>
+						<ul>
+							<li>
+								<a class="anchor hidden-xs" href="#GIT是分散式版本控制系統" title="GIT是分散式版本控制系統">
+									<span class="octicon octicon-link"></span>
+								</a>GIT是分散式版本控制系統
+							</li>
+							<li>
+								<a class="anchor hidden-xs" href="#版本控制系統的基本名詞" title="版本控制系統的基本名詞">
+									<span class="octicon octicon-link"></span>
+								</a>版本控制系統的基本名詞
+							</li>
+							<li>Git的數據庫分為遠端數據庫和本地端數據庫<a class="anchor hidden-xs" href="#Git的數據庫分為遠端數據庫和本地端數據庫" title="Git的數據庫分為遠端數據庫和本地端數據庫"><span class="octicon octicon-link"></span></a></li>
+
+							<li>記錄修改的提交<a class="anchor hidden-xs" href="#記錄修改的提交" title="記錄修改的提交">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+
+							<li>工作目錄與索引<a class="anchor hidden-xs" href="工作目錄與索引" title="工作目錄與索引">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+							<li>Git的提交流程<a class="anchor hidden-xs" href="#Git的提交流程" title="Git的提交流程">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+							<li>線上資料<a class="anchor hidden-xs" href="#線上資料" title="線上資料">
+									<span class="octicon octicon-link"></span>
+								</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<hr>
+				<h3 id="GIT是分散式版本控制系統">
+					<a class="anchor hidden-xs" href="#GIT是分散式版本控制系統" title="GIT是分散式版本控制系統">
+						<span class="octicon octicon-link"></span>
+					</a>為什麼要用 GIT ?</h3>
+				<ol>
+					<li><h5>Git可以把檔案的狀態作為更新歷史記錄保存起來。因此可以把編輯過的檔案復原到以前的狀態，也可以顯示編輯過內容的差異。</h5></li>
+					<li><h5>版本控制系統 (Version Control System, VCS)是一套能記錄所有修改版本、讓使用者能隨時取回特定版本的系統。</h5></li>
+					<li><h5>集中式版本系統的版本儲存庫Repository都存在中央的伺服器，要先從中央伺服器取得最新的版本，才開始進行編程，完成後，再把做好的版本推回去中央伺服器，而其中的所有的變更與提交，均須在聯網的情況下才能達成。如：CVS, Subversion 及 Perforce 皆具備單一伺服器，記錄所有版本的檔案，且有多個客戶端從伺服器從伺服器取出檔案。</h5></li>
+					<li><h5>分散式版本控制系統則沒有中央，每個人的電腦上都有一個完整的Repository，這樣在工作的時候不需要聯網了，因為版本庫就在每個人的電腦上。在分散式版本控制系統，諸如：Git, Mercurial, Bazaar、Darcs。 客戶端不只是取出最後一版的檔案，而是完整複製整個儲存庫。即使是整個系統賴以運作的電腦損毀，皆可將任何一個客戶端先前複製的資料還原到伺服器。每一次的取出動作實際上就是完整備份整個儲存庫。</h5></li>
+				</ol>
+				
+				<br><br>
+				
+				<h3 id="版本控制系統的基本名詞">
+					<a class="anchor hidden-xs" href="#版本控制系統的基本名詞" title="版本控制系統的基本名詞">
+						<span class="octicon octicon-link"></span>
+					</a>版本控制系統的基本名詞</h3>
+				<ol>
+					<li><h5>Repository (數據庫/版本儲存庫)：用來保存歷史程式碼，和所有跑這個專案需要的東西，包括所有原始碼、範例設計檔、文件等等。</h5></li>
+					<li><h5>Local (本地端)：通常是個人開發的電腦/機台。</h5></li>
+					<li><h5> Remote (遠端)：通常是一個共用的伺服器。</h5></li>
+				
+				</ol>
+				
+				<br><br>
+				
+					<h3 id="Git的數據庫分為遠端數據庫和本地端數據庫">
+					<a class="anchor hidden-xs" href="#Git的數據庫分為遠端數據庫和本地端數據庫" title="Git的數據庫分為遠端數據庫和本地端數據庫">
+						<span class="octicon octicon-link"></span>
+					</a>Git的數據庫分為遠端數據庫和本地端數據庫</h3>
+				<ol>
+					<li><h5>遠端數據庫: 配有專用的伺服器，為了讓多人共享而建立的數據庫</h5></li>
+					<li><h5>本地端數據庫：為了方便用戶個人使用，在自己的機器上配置的數據庫</h5></li>
+					<li><i>您可以在本地端數據庫上使用像是還原更改、跟踪更改等所有Git版本控制功能。不過，如果想要公開在本地端數據庫的修改內容，就需要將內容上傳到遠端數據庫</i></li>
+				</ol>
+				
+				<br><br>
+				
+				
+					<h3 id="記錄修改的提交">
+					<a class="anchor hidden-xs" href="#記錄修改的提交" title="記錄修改的提交">
+						<span class="octicon octicon-link"></span>
+					</a>記錄修改的提交</h3>
+				<ol>
+					<li><h5>若想把變更與新增的檔案/目錄儲存到數據庫中，您需要執行提交（Commit）;執行提交後，數據庫裡會產生上次提交的狀態與現在狀態的差異記錄（也被稱為Revision）</h5></li>
+					<li><h5>提交是以時間順序排列狀態被儲存到數據庫中的。憑藉該提交和最新的檔案狀態，就可以知道過去的修改記錄以及內容</h5></li>
+					<li><h5>為了區分提交，系統會產生一組識別碼來給提交命名，識別碼會根據提交修改的內容計算出不重複的40位英文數字。指定識別碼，就可以在數據庫中找到對應的提交</h5></li>
+					<li><i>像錯誤修復或功能添加之類不同含義的更改，要盡量分開來提交。這樣可以方便事後從歷史記錄裡找出特定的修改內容。</i></li>
+					<li><i>執行提交時，系統會要求輸入提交訊息。請務必輸入提交訊息，因為在訊息空白的狀態下執行提交是會失敗的</i></li>
+					<li>Git的標準提交訊息：
+					<ul>
+						<li>第1行：提交時修改內容的摘要</li>
+						<li>第2行：空行</li>
+						<li>第3行以後：修改的理由</li></li>
+						</ul>
+				</ol>
+				
+				<br><br>
+			
+				<h3 id="工作目錄與索引">
+					<a class="anchor hidden-xs" href="#工作目錄與索引" title="工作目錄與索引">
+						<span class="octicon octicon-link"></span>
+					</a>工作目錄與索引</h3>
+				<ol>
+					<li><h5>工作目錄（Working Tree）是保存您目前正在處理檔案的目錄，Git 相關的操作都會在這個目錄下完成</h5></li>
+					<li><h5>索引(Index )位於工作目錄和數據庫之間，是為了向數據庫提交作準備的暫存區域。</h5></li>
+					<li>所以在工作目錄上做的任何變更並不會直接提交到數據庫的。Git在執行提交的時候，不是直接將工作目錄的狀態儲存到數據庫，而是將索引的狀態儲存到數據庫。因此，要提交變更，首先必需要把變更內容加入到索引中。
+索引的存在可以排除工作目錄裡不必要的檔案提交，還可以只將檔案變更內容的一部分加入索引並提交。</li>
+				
+				</ol>
+				
+				<br><br>
+			
+			<h3 id="Git的提交流程">
+					<a class="anchor hidden-xs" href="#Git的提交流程" title="Git的提交流程">
+						<span class="octicon octicon-link"></span>
+					</a>Git的提交流程</h3>
+				<ol>
+					<li><h5> 修改完但還沒提交的檔案為Modified</h5></li>
+					<li><h5> 藉由git add .指令進入Staging Area暫存起來 (暫存區</h5></li>
+					<li><h5> 藉由git commit指令確定將這個檔案版本存入Repository (版本庫,成功儲存</h5></li>
+					<li><h5>
+						常用命令列指令:
+						</h5></li>
+				<table>
+					<thead>
+						<tr>
+							<th style="width:300px; display:inline-block; ">指令</th>
+							<th>意義</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>touch</td>
+							<td>建立檔案</td>
+						</tr>
+						<tr>
+							<td>mkdir </td>
+							<td>建立資料夾、目錄</td>
+						</tr>
+						<tr>
+							<td>git add .     </td>
+							<td>新增的檔案加入到 Git 版本控管</td>
+						</tr>
+						<tr>
+							<td>git init</td>
+							<td>在本地資料夾新增數據庫</td>
+						</tr>
+						<tr>
+							<td>git clone</td>
+							<td>	複製下來別人的專案到local端</td>
+						</tr>
+						<tr>
+							<td>git status	</td>
+							<td>查詢當前工作目錄的詳細狀態</td>
+						</tr>
+						<tr>
+							<td>git checkout</td>
+							<td>切換到其他分支</td>
+						</tr>
+						<tr>
+						<td>
+							git checkout -b 
+							</td>
+						<td>
+							 切換並建立其他分支</td></tr>
+						<tr>
+						<td>
+							git branch </td>
+						<td>
+							能建立和刪除分支，如果不加任何參數，它會給出目前所有分支的清單,分支前的'*'字元：它表示目前所在的分支。也就是說，如果現在提交更新，master 分支將隨著開發進度前移。</td>
+						</tr>
+						<tr>
+						<td>
+							git branch -v </td>
+						<td>
+						查看各個分支最後一個提交物件的資訊</td>
+						</tr>
+						<tr>
+						<td>
+							git branch --merged </td>
+						<td>
+							  從該清單中篩選出你已經與目前分支合併的分支</td>
+						</tr>
+						<tr>
+						<td>
+							git branch--no-merged</td>
+						<td> 從該清單中篩選出你尚未與目前分支合併的分支</td>
+						</tr>
+						<tr>
+						<td>
+							git branch -d </td><td>
+							清單中沒有'*'字元的分支可以用此指令來刪掉(若是還未合併進來的分支，由於這些分支中還包含著尚未合併進來的工作成果，所以簡單地用 git branch -d 刪除該分支會提示錯誤，因為那樣做會丟失資料)</td>
+						</tr>
+						<tr>
+						<td>
+							git branch-D </td>
+						<td>
+							   強制執行刪除選項</td>
+						</tr>
+						<tr>
+						<td>
+							git pull </td>
+						<td>
+							 就是去上線抓東西下來（Fetch），並且更新本機的進度（Merge）</td>
+						</tr>
+						<tr>
+						<td>
+							git pull --rebase </td>
+						<td>在 Fetch 完成之後，便會使用 Rebase 方式進行合併</td>
+						</tr>
+						<tr>
+						<td>
+							git fetch </td>
+						<td>執行 pull，遠端數據庫的內容會自動合併。但是，若是想確認遠端數據庫的內容卻不是真的想合併，在這種情況下，請使用 fetch。</td>
+						</tr>
+						<tr>
+						<td>
+							git help add </td><td>
+							 查詢完整的文件</td>
+						</tr>
+						<tr>
+						<td>
+							git commit -m "版本紀錄的說明文字" </td>
+						<td>
+							將檔案提交入Repository，只能輸入一行</td>
+						</tr>
+						<tr>
+						<td>
+							git commit -e "版本紀錄的說明文字" </td>
+						<td>  將檔案提交入Repository，能撰寫超過一行的評論</td>
+						</tr>
+						<tr>
+						<td>
+							git rm –cached  </td>
+						<td>將不在Repository的檔案移出Staging Area，若是git add .錯檔案了，可以將檔案移出暫存區（但是不適用在已經被加入repository的檔案）</td>
+						</tr>
+						<tr>
+						<td>
+							git reset HEAD  </td>
+						<td>將已經在Repository的檔案移出Staging Area</td>
+						</tr>
+						<tr>
+						<td>
+							git log </td>
+						<td>
+							      查詢版本的歷史紀錄</td>
+						</tr>
+						<tr>
+						<td>
+							git diff </td>
+						<td>比較文件或commit間修改的差異(在git diff後面輸入commit代碼，也可以比較兩次commit間修改的差異)</td>
+						</tr>
+						<tr>
+						<td>
+							git show </td>
+						<td>  詳細列出該次commit的修改內容(把commit代碼複製起來 (複製六碼或以上)後輸入在git show後面，就會顯示該次詳細的修改內容)</td>
+						</tr>
+						<tr>
+						<td>git push origin master </td><td>上傳 master 分支到 origin 伺服器</td>
+						</tr>
+						<tr><td>git log -10</td>
+							<td>   可以透過以下指令限制輸出的版本數量，以一個 ( - ) 與一個數字，可以限定輸出最近幾筆紀錄</td>
+						
+						</tr>
+						
+						<tr><td>git rm '要刪除的檔案名'</td><td>刪除檔案</td></tr>
+						<tr>
+						<td>
+							git mv 檔案名 要改的檔案名 </td><td>變更檔案或目錄的名稱</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+
+				</ol>
+				
+				<br><br>
+			
+							<h3 id="線上資料">
+					<a class="anchor hidden-xs" href="#線上資料" title="線上資料">
+						<span class="octicon octicon-link"></span>
+					</a>線上資料</h3>
+				<ol>
+					<li>
+						<a href="https://git-scm.com/book/zh/v2/Git-分支-分支的新建与合并" target="_blank">Git</a>
+					</li>
+					<li>
+						<a href="https://backlog.com/git-tutorial/tw/intro/intro1_1.html" target="_blank">連猴子都能懂的git入門指南</a>
+					</li>
+					<li>
+						<a href="https://git-scm.com/book/en/v2" target="_blank">Git官方網站</a>
+					</li>
+				
+				</ol>
+				
+				<br><br>
+			
 		<p>Welcome, eliane</p>
 
         <footer>
